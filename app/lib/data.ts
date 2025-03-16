@@ -91,10 +91,11 @@ export async function fetchFilteredInvoices(
   currentPage: number,
 ) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+  console.log("RELOAD DATA INVOICES")
 
   try {
     const invoices = await sql<InvoicesTable[]>`
-      SELECT
+      SELECT  
         invoices.id,
         invoices.amount,
         invoices.date,
